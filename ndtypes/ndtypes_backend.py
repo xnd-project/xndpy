@@ -1,6 +1,6 @@
 from flit.buildapi import build_wheel as _build_wheel
 from flit.buildapi import build_sdist as _build_sdist
-import os ,platform, shutil
+import os, platform, shutil
 import subprocess, sys, sysconfig
 
 def check_err(proc):
