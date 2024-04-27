@@ -1,0 +1,33 @@
+[project]
+name = "xndlib"
+version = "0.3.2"
+requires-python = ">=3.8"
+
+authors = [ { name = "Stefan Krah", email = "skrah@bytereef.org" } ]
+license = { file = "LICENSE.txt" }
+description = "libndtypes, libxnd and libgumath"
+keywords = ["ndtypes", "xnd", "gumath", "array computing",
+            "data description"]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD-3-clause",
+  "Programming Language :: C",
+  "Programming Language :: C++",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Software Development"]
+
+[build-system]
+requires = ["flit"]
+build-backend = "xndlib_backend"
+backend-path = ["."]
+
+[tool.flit.sdist]
+include = ["xndlib", "source", "xndlib_backend.py", "build.bat",
+           "pyproject.toml"]
+exclude = ["source/xnd/.git"]
