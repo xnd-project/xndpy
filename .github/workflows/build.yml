@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
@@ -36,6 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
@@ -55,18 +57,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          mkdir venv
+          python3 -m venv venv
+          venv/bin/python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
-          python3 -m build .
+          ../venv/bin/python3 -m build .
           cd ../ndtypes
           git clone https://github.com/xnd-project/xnd source/xnd
-          python3 -m build .
+          ../venv/bin/python3 -m build .
           cd ../xnd
           git clone https://github.com/xnd-project/xnd source/xnd
-          python3 -m build .
+          ../venv/bin/python3 -m build .
           cd ../gumath
           git clone https://github.com/xnd-project/xnd source/xnd
-          python3 -m build .
+          ../venv/bin/python3 -m build .
 
   ubuntu_x64:
     name: 'Ubuntu x64'
@@ -74,6 +79,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
