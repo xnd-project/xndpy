@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
@@ -36,6 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
@@ -55,6 +57,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
@@ -74,6 +77,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          python3 -m pip install build
           cd xndlib
           git clone https://github.com/xnd-project/xnd source/xnd
           python3 -m build .
