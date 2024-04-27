@@ -13,7 +13,6 @@ usage
 
 To build all packages, execute the following commands:
 
-```
 python3 -m pip install build
 
 cd xndlib
@@ -31,4 +30,3 @@ python3 -m build .
 cd ../gumath
 git clone https://github.com/xnd-project/xnd source/xnd
 python3 -m build .
-```
