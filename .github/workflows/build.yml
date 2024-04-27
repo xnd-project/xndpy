@@ -1,0 +1,88 @@
+name: Tests
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+
+  vcbuild64:
+    name: "Windows Release|x64"
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd xndlib
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ..\ndtypes
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ..\xnd
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ..\gumath
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+        shell: cmd
+
+  vcbuild32:
+    name: "Windows Release|x86"
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd xndlib
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ..\ndtypes
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ..\xnd
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ..\gumath
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+
+  osx_x64:
+    name: 'OSX x64'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd xndlib
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ../ndtypes
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ../xnd
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ../gumath
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+
+  ubuntu_x64:
+    name: 'Ubuntu x64'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cd xndlib
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ../ndtypes
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ../xnd
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
+          cd ../gumath
+          git clone https://github.com/xnd-project/xnd source/xnd
+          python3 -m build .
